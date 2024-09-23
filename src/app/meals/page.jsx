@@ -13,9 +13,10 @@ export default function Home() {
         <p>
           Choose your favorite recipe and cook it yourself. It is easy and fun
         </p>
-        <Link className={classes.highlight} href="/meals/share">
-          Share your meals
-        </Link>
+
+        <div className={classes.cta}>
+          <Link href={`/meals/share`}>Share your meals</Link>
+        </div>
       </header>
       <main className={classes.main}>
         <MealsGrid meals={[]} />
