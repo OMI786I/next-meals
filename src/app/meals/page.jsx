@@ -2,7 +2,9 @@ import Link from "next/link";
 import classes from "../community/page.module.css";
 import MealsGrid from "@/components/meals/MealsGrid";
 
-export default function Home() {
+export default async function Meals() {
+  let data = await fetch("http://localhost:3000/api/meals");
+  let posts = await data.json();
   return (
     <div className="">
       <header className={classes.header}>
@@ -19,7 +21,7 @@ export default function Home() {
         </div>
       </header>
       <main className={classes.main}>
-        <MealsGrid meals={[]} />
+        <MealsGrid meals={posts.meals} />
       </main>
     </div>
   );
